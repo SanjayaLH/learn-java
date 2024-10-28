@@ -28,5 +28,8 @@ public class Demo {
 
         System.out.println("Current capacity of the ArrayList: " + capacity);
         System.out.println(names.get(2));
+        System.out.println(names.contains("f"));
+        System.out.println(names.contains("F"));
+        System.out.println(names.isEmpty());
     }
 }
