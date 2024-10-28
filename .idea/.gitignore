@@ -1,3 +1,27 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+# Compiled class files
+*.class
+
+# Logs
+*.log
+
+# Package Files
+*.jar
+*.war
+
+# Maven
+/target/
+
+# Gradle
+/build/
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+
+# Operating System files
+.DS_Store
+Thumbs.db
