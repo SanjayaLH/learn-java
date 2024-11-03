@@ -30,12 +30,20 @@ Remove movies by genre - Remove all movies of a specified genre from the lis/
     }
 
     public void printAll() {
-        for (Movie m : movieList
-        ) {
+        for (Movie m : movieList) {
             System.out.println(m);
         }
     }
     public void removeMovie(String genre) {
-        movieList.removeAll(findMovieByGenre(genre));
+        List<Movie> movieListToRemove = findMovieByGenre(genre);
+        if (movieListToRemove == null || movieListToRemove.isEmpty()) {
+            System.out.println("The movie list is either not initialized (null) or empty.");
+        } else {
+            System.out.println("Following movies will remove from the library:");
+            for (Movie movie : movieListToRemove ) {
+                System.out.println(movie);
+            }
+            movieList.removeAll(findMovieByGenre(genre));
+        }
     }
 }
