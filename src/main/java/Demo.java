@@ -1,10 +1,8 @@
-package com.learn.arraylist;
-
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArrayListDemo {
+public class Demo {
 
     public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException {
         demoOne();
