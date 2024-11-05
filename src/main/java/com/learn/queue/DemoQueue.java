@@ -18,6 +18,9 @@ public class DemoQueue {
 
         String front = queue.remove();
         System.out.println("Removed element: " + front);
+        queue.remove();
+        queue.remove();
+        queue.remove();
 
         System.out.println("Queue after removal: " + queue);
 
