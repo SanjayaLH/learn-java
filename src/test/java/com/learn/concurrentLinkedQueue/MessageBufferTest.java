@@ -11,36 +11,50 @@ import java.util.concurrent.TimeUnit;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MessageBufferTest {
-    private MessageBuffer messageBuffer;
+    private MessageBuffer buffer;
 
     @BeforeEach
     public void setUp() {
-         messageBuffer = new MessageBuffer();
+        buffer = new MessageBuffer();
     }
+
     @Test
     void testAddAndProcessMessages() {
-        assertEquals(true,messageBuffer.isEmpty());
-        messageBuffer.addMsg("2024-11-12T10:15:30Z: Message from A1");
-        assertEquals(false,messageBuffer.isEmpty());
+        assertEquals(true, buffer.isEmpty());
+        buffer.addMsg("2024-11-12T10:15:30Z: Message from A1");
+        assertEquals(false, buffer.isEmpty());
     }
 
     @Test
-    void processAllMsg() {
+    void shouldProcessAllMsg() {
+        buffer.addMsg("2024-11-12T10:15:30Z: Message from A1");
+        buffer.addMsg("2024-11-12T10:15:31Z: Message from A2");
+
+        String[] processedMessages = buffer.processAllMsg();
+
+        // Ensure all messages are processed
+        assertEquals(2, processedMessages.length);
     }
 
     @Test
-    void isEmpty() {
+    void shouldCheckAllProcessedMsgAreEmpty() {
+        buffer.addMsg("2024-11-12T10:15:33Z: Message from B1");
+        buffer.addMsg("2024-11-12T10:15:34Z: Message from B2");
+
+        String[] processedMessages = buffer.processAllMsg();
+
+        // Ensure all messages are cleared from Queue
+        assertTrue(buffer.isEmpty());
     }
+
     @Test
     public void testConcurrentAccess() throws InterruptedException {
-        MessageBuffer buffer = new MessageBuffer();
         ExecutorService executor = Executors.newFixedThreadPool(3);
 
         // Simulate multiple threads adding messages
         executor.submit(() -> buffer.addMsg("2024-11-12T10:15:30Z: Message from Thread 1"));
         executor.submit(() -> buffer.addMsg("2024-11-12T10:15:31Z: Message from Thread 2"));
         executor.submit(() -> buffer.addMsg("2024-11-12T10:15:32Z: Message from Thread 3"));
-        executor.submit(() -> buffer.addMsg("2024-11-12T10:15:32Z: Message from Thread 4"));
 
         executor.shutdown();
         executor.awaitTermination(5, TimeUnit.SECONDS);
