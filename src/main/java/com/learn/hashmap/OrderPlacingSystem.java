@@ -40,7 +40,6 @@ public class OrderPlacingSystem {
             ordersMap.put(customerId, existingOrderList);
         }
         System.out.println(ordersMap);
-        System.out.println(ordersMap.size());
     }
 
     public void listOrdersForCustomer(String customerId) {
@@ -48,9 +47,25 @@ public class OrderPlacingSystem {
         System.out.println("Customer Id:" + customerId + ": " + existingOrders);
     }
 
-    public void isCustomerExist(String customerId) {
+    public boolean isCustomerExist(String customerId) {
         boolean isExist = ordersMap.containsKey(customerId);
         System.out.println("Is this customer exist: " + isExist);
+        return isExist;
+    }
+
+    public void setDefaultOrderToCustomer(String customerId) {
+        if (!isCustomerExist(customerId)) {
+            List<Order> defaultOrder = new ArrayList<>();
+            defaultOrder.add(new Order("d1", "Welcome Package", "s1"));
+
+            ordersMap.getOrDefault(customerId, defaultOrder);
+            System.out.println("Customer Id:" + customerId + " is not exist, so added new customer");
+            System.out.println("Default order details: " + defaultOrder);
+        } else {
+            System.out.println("Customer Id:" + customerId + " is exist");
+
+        }
+
     }
 
     public void updateMostResentOrderStatus(String customerId, String newStatus) {
@@ -75,6 +90,7 @@ public class OrderPlacingSystem {
 
         orderPlacingSystem.listOrdersForCustomer("002");
         orderPlacingSystem.isCustomerExist("004");
+        orderPlacingSystem.setDefaultOrderToCustomer("005");
         orderPlacingSystem.updateMostResentOrderStatus("003", "s2");
     }
 }
