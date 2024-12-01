@@ -29,7 +29,9 @@ public class OrderPlacingSystem {
     }
 
     public void addOrderForCustomer(String customerId, Order order) {
-        boolean isExist = ordersMap.containsKey(customerId);
+
+       ordersMap.computeIfAbsent(customerId, key -> new ArrayList<>()).add(order);//check this way also, same logic
+        /*boolean isExist = ordersMap.containsKey(customerId);
         if (!isExist) {
             List<Order> orderList = new ArrayList<>();
             orderList.add(order);
@@ -39,12 +41,11 @@ public class OrderPlacingSystem {
             existingOrderList.add(order);
             ordersMap.put(customerId, existingOrderList);
         }
-        System.out.println(ordersMap);
+        System.out.println(ordersMap);*/
     }
 
-    public void listOrdersForCustomer(String customerId) {
-        List<Order> existingOrders = ordersMap.get(customerId);
-        System.out.println("Customer Id:" + customerId + ": " + existingOrders);
+    public List<Order> listOrdersForCustomer(String customerId) {
+        return ordersMap.get(customerId);
     }
 
     public boolean isCustomerExist(String customerId) {
@@ -54,15 +55,10 @@ public class OrderPlacingSystem {
     }
 
     public void setDefaultOrderToCustomer(String customerId) {
+        //ordersMap.putIfAbsent(customerId, new ArrayList<>(List.of(new Order("d1", "Welcome Package", "s1"))));//use this and previous logic is incorrect
         if (!isCustomerExist(customerId)) {
             List<Order> defaultOrder = new ArrayList<>();
             defaultOrder.add(new Order("d1", "Welcome Package", "s1"));
-
-            ordersMap.getOrDefault(customerId, defaultOrder);
-            System.out.println("Customer Id:" + customerId + " is not exist, so added new customer");
-            System.out.println("Default order details: " + defaultOrder);
-        } else {
-            System.out.println("Customer Id:" + customerId + " is exist");
 
         }
 
