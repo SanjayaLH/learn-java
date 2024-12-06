@@ -11,8 +11,8 @@ public class Demo {
 
         Demo demo = new Demo();
 
-        System.out.println("Addition:"+demo.applyOperation(5,3,addition));
-        System.out.println("Multiplication:"+demo.applyOperation(5,3,multiplication));
+        System.out.println("Addition:" + demo.applyOperation(5, 3, addition));
+        System.out.println("Multiplication:" + demo.applyOperation(5, 3, multiplication));
 
     }
 }
