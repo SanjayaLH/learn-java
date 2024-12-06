@@ -22,7 +22,7 @@ public class BankAccount {
             balance += amount;
             System.out.println("Deposited " + amount + ". New balance: " + balance);
         } else {
-            System.out.println("Deposit amount must be positive.");
+            throw new IllegalArgumentException("Deposit amount must be positive.");
         }
     }
 
@@ -32,10 +32,10 @@ public class BankAccount {
                 balance -= amount;
                 System.out.println("Withdrew " + amount + ". New balance: " + balance);
             } else {
-                System.out.println("Insufficient funds, transaction failed.");
+                throw new AccountException("Insufficient funds, transaction failed.");
             }
         } else {
-            System.out.println("Withdrawal amount must be positive.");
+            throw new IllegalArgumentException("Withdrawal amount must be positive.");
         }
     }
 
@@ -43,7 +43,8 @@ public class BankAccount {
         BankAccount account = new BankAccount("123456789", "Asela", 1000.00);
 
         account.deposit(500.00);
-        account.withdraw(2000.00);
+        //account.deposit(-500.00);
+        //account.withdraw(2000.00);
         account.withdraw(300.00);
 
         System.out.println("Current balance: " + account.getBalance());
