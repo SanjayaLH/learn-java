@@ -5,6 +5,9 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+/**
+ * Head-First-Java/chap15
+ */
 public class DailyAdviceServer {
     String[] adviceList = {"Take smaller bites", "Go for the tight jeans. No they do NOT make you look fat",
             "One word: inappropriate", "Just for today, be honest.  Tell your boss what you *really* think",
@@ -13,8 +16,7 @@ public class DailyAdviceServer {
     public void go() {
         try {
             ServerSocket serverSock = new ServerSocket(4242);
-            while (true)
-            {
+            while (true) {
                 Socket sock = serverSock.accept();
 
                 PrintWriter writer = new PrintWriter(sock.getOutputStream());
@@ -23,8 +25,7 @@ public class DailyAdviceServer {
                 writer.close();
                 System.out.println(advice);
             }
-        } catch (IOException ex)
-        {
+        } catch (IOException ex) {
             ex.printStackTrace();
         }
     }
@@ -34,8 +35,7 @@ public class DailyAdviceServer {
         return adviceList[random];
     }
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         DailyAdviceServer server = new DailyAdviceServer();
         server.go();
     }

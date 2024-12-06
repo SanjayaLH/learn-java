@@ -61,13 +61,11 @@ public class LogisticsOptimizer {
     private final Set<Package> incomingPkgs;
 
     public LogisticsOptimizer() {
-        //System.out.println("------------In LogisticsOptimizer()--------------");
         incomingPkgs = new HashSet<>();
         packageQueue = new PriorityQueue<>();
     }
 
     public void removeDuplicates(Package newPackage) {
-        //System.out.println("------------In removeDuplicates()--------------");
         if (incomingPkgs.add(newPackage)) { // `add` returns false if the item is already present
             System.out.println("Pkg added: " + newPackage);
         } else {
@@ -76,7 +74,6 @@ public class LogisticsOptimizer {
     }
 
     public void storePackages() {
-        ///System.out.println("------------In storePackages()--------------");
         packageQueue.addAll(incomingPkgs);
     }
 
@@ -88,14 +85,13 @@ public class LogisticsOptimizer {
             city = p.getCity();
             if (p.getCity().equals(city)) {
                 plist.add(p);
-              System.out.println(p.getCity()+" :"+p);
-          }
+                System.out.println(p.getCity() + " :" + p);
+            }
         }
         System.out.println("Groups in " + city + ": " + plist);
     }
 
     public Optional<Package> deliverPkgs() {
-        //System.out.println("------------In deliverPkgs()--------------");
         return Optional.ofNullable(packageQueue.poll())
                 .map(pack -> {
                     System.out.println("Delivered : " + pack);
