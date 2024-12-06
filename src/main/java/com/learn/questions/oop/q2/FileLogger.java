@@ -1,8 +1,8 @@
-package com.learn.questions.oop;
+package com.learn.questions.oop.q2;
 
-public class FileLogger {
+public class FileLogger implements Logger{
 
-    public void logger() {
+    public void log() {
         System.out.println("File logger");
     }
 }
