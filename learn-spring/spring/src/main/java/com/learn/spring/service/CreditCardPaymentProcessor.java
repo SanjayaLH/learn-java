@@ -3,7 +3,7 @@ package com.learn.spring.service;
 import org.springframework.stereotype.Component;
 
 @Component("card")
-public class CreditCardPaymentProcesser implements PaymentProcesser {
+public class CreditCardPaymentProcessor implements PaymentProcessor {
 
     @Override
     public void processPayment() {

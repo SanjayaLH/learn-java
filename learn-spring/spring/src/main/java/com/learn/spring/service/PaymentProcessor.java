@@ -1,6 +1,6 @@
 package com.learn.spring.service;
 
-public interface PaymentProcesser {
+public interface PaymentProcessor {
 
     void processPayment();
 }
