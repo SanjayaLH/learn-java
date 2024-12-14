@@ -4,14 +4,15 @@ public class EcommerceSystemDemo {
     public static void main(String[] args) {
         double originalPrice = 100.00;
 
-        Discount flatRateDiscount = new FlatRateDiscount(0.2);
-        System.out.println("Flat Rate Discount price: " + flatRateDiscount.discount(originalPrice));
+        Cart cart = new Cart(new FlatRateDiscount(0.2));
 
-        Discount percentageBasedDiscount = new PercentageBasedDiscount(0.3);
+        System.out.println("Flat Rate Discount price: " + cart.calculateFinalAmount(originalPrice));
+
+       /* Discount percentageBasedDiscount = new PercentageBasedDiscount(0.3);
         System.out.println("Percentage Based Discount price: " + percentageBasedDiscount.discount(originalPrice));
 
         Discount noDiscount = new NoDiscount();
-        System.out.println("Price with no discount: " + noDiscount.discount(originalPrice));
+        System.out.println("Price with no discount: " + noDiscount.discount(originalPrice));*/
 
     }
 }
