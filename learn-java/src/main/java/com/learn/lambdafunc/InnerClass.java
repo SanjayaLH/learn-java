@@ -10,4 +10,10 @@ public class InnerClass {
             return obj.toString();
         }
     };
+    Function<Object, String> f1 = new Function<Object, String>() {
+        @Override
+        public String apply(Object obj) {
+            return obj.toString();
+        }
+    };
 }
