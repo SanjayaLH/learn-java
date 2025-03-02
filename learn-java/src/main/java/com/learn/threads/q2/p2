@@ -1,0 +1,5 @@
+2. Controlling Threads: Death of a Thread
+-----------------------------------------------
+
+Implement a service that processes requests in separate threads
+and can be gracefully stopped with a shutdown command.

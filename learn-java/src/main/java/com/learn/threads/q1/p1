@@ -1,0 +1,7 @@
+1. The Thread Class and the Runnable Interface
+---------------------------------------------------
+Problem: Design a multi-threaded ticket booking system
+where multiple users can book tickets simultaneously without any data inconsistency.
+
+
+
