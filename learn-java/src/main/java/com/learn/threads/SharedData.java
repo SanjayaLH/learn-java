@@ -1,5 +1,9 @@
 package com.learn.threads;
 
+/**
+ * Sample code for
+ * 5. Accessing Class and Instance Variables from Multiple Threads
+ */
 public class SharedData {
     private volatile int sharedCounter;
 

@@ -1,6 +1,7 @@
 package com.learn.threads;
 
 /**
+ * Sample code for
  * 2. Controlling Threads: Death of a Thread
  */
 public class StopThread implements Runnable {

@@ -3,6 +3,10 @@ package com.learn.threads;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * Sample code for
+ * 6. The wait() and notify() Methods
+ */
 public class ProcessingQueue {
     private Queue<Integer> queue = new LinkedList<>();
     private final int CAPACITY = 5;
