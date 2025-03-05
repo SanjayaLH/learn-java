@@ -1,5 +1,9 @@
 package com.learn.threads;
 
+/**
+ * Sample code for
+ * 3. Synchronization
+ */
 public class Counter {
     private int count = 0;
 

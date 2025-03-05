@@ -3,3 +3,7 @@
 
 Implement a service that processes requests in separate threads
 and can be gracefully stopped with a shutdown command.
+
+- request/tasks -> can implement threads
+- request/tasks -> need to store somewhere -> use queue
+-
