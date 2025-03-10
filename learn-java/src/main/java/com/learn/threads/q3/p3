@@ -1,0 +1,11 @@
+3. Synchronization
+---------------------------
+Create a banking application where multiple users can deposit and withdraw money
+concurrently from a shared account without data corruption.
+
+- Check the output without join() first.
+- Added AccountException class to throw Runtime exception
+
+    - No Data Corruption- synchronized ensures one thread modifies balance at a time.
+    - Enhancement -> Replace synchronized with ReentrantLock for more control.
+                     Can use ExecutorService for better thread management.

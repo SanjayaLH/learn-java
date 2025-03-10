@@ -8,3 +8,6 @@ Notes:
         - CachedThreadPoolExample
     3. newSingleThreadScheduledExecutor()
         - ScheduledExecutorExample
+
+* to understand the join(),
+    - MultiJoinExample class
