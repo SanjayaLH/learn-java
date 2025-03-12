@@ -1,0 +1,13 @@
+Notes:
+------
+* Added below classes to understand few methods in Executors class
+    1. newFixedThreadPool(int nThreads, ThreadFactory threadFactory)
+        - CustomThreadFactory
+        - FixedThreadPoolExample
+    2. newCachedThreadPool()
+        - CachedThreadPoolExample
+    3. newSingleThreadScheduledExecutor()
+        - ScheduledExecutorExample
+
+* to understand the join(),
+    - MultiJoinExample class

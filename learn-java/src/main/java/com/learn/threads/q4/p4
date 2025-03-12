@@ -1,0 +1,6 @@
+4. Serializing Access to Methods
+---------------------------
+Implement a network connection pool that supports multiple users. Use synchronized methods to
+ensure that only one user can acquire or release a connection at a time.
+
+-

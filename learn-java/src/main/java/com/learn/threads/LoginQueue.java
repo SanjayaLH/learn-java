@@ -1,5 +1,9 @@
 package com.learn.threads;
 
+/**
+ * Sample code for
+ * 4. Serializing Access to Methods
+ */
 public class LoginQueue {
     private int slotsAvailable;
 

@@ -1,6 +1,7 @@
 package com.learn.threads;
 
 /**
+ * Sample code for
  * 1. The Thread Class and the Runnable Interface
  */
 public class ThreadExample implements Runnable{
