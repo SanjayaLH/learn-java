@@ -1,0 +1,7 @@
+5. Accessing Class and Instance Variables from Multiple Threads
+----------------------------------------------------------------
+Problem: Design a system where multiple sensors update a shared weather data object.
+ Ensure that the updates to the shared object are thread-safe.
+ -choose only 2 params to demonstrate
+ - took random data using Random class
+ - Is this implementation ok?
