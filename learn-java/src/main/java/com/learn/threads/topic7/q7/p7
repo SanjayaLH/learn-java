@@ -1,0 +1,13 @@
+7. Passing Messages
+----------------------
+Problem:
+Create a logging system where multiple threads can log messages to a shared log file asynchronously.
+Use message passing to ensure that log entries are not corrupted.
+    - log message producer -> write messages to queue.
+        - has multiple
+    - log message consumer -> read log message from queue and print it to the shared log file.
+        - has multiple
+    - had to add timestamp to identify the time
+
+
+without synchronized block for queue in the produceMsg() and the writeMsg() the order was not guaranteed.
