@@ -27,7 +27,7 @@ public class LoggingSystem {
 
     public static void main(String[] args) {
         int numLogProducer = 5;
-        int numLogConsumer = 1;
+        int numLogConsumer = 1;//in logging system there will be only one log file per application
 
         Random random = new Random();
         LoggingSystem loggingSystem = new LoggingSystem();
