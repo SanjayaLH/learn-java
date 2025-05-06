@@ -1,4 +1,0 @@
-6. The wait() and notify() Methods
------------------------------------
-Problem: Develop a multi-threaded application simulating a restaurant kitchen where chefs (producers)
-and waiters (consumers) must synchronize food preparation and delivery using a shared buffer.

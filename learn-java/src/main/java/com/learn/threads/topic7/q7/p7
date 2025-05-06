@@ -6,7 +6,7 @@ Use message passing to ensure that log entries are not corrupted.
     - log message producer -> write messages to queue.
         - has multiple
     - log message consumer -> read log message from queue and print it to the shared log file.
-        - has multiple
+        - has multiple - after discussion with Kalpa this is wrong
     - had to add timestamp to identify the time
 
 
