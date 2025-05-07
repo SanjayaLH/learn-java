@@ -1,0 +1,26 @@
+9. Scheduling and Priority
+---------------------------
+Thread priorities:
+1. mainly 3 priorities
+2.    /**
+       * The minimum priority that a thread can have.
+       */
+      public static final int MIN_PRIORITY = 1;
+
+      /**
+       * The default priority that is assigned to a thread.
+       */
+      public static final int NORM_PRIORITY = 5;
+
+      /**
+       * The maximum priority that a thread can have.
+       */
+      public static final int MAX_PRIORITY = 10;
+
+Problem:
+Design a simulation where multiple background tasks and a critical task are running concurrently.
+Use thread priorities to ensure that the critical task receives more CPU time compared to background tasks.
+    - do we want to use join() for this? what happened if use it?
+    - need to know about latency numbers(by Jeff Dean)
+        - https://gist.github.com/jboner/2841832
+        - https://devcookies.medium.com/latency-numbers-you-should-know-a-guide-for-software-engineers-35908fd94f5e

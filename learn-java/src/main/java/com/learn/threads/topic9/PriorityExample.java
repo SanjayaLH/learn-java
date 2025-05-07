@@ -1,4 +1,4 @@
-package com.learn.threads;
+package com.learn.threads.topic9;
 
 /**
  * Sample code for
