@@ -1,0 +1,7 @@
+10. Thread State
+------------------
+Problem:
+Create a system monitor that logs changes in thread states for a set of threads executing various tasks.
+- need different methods to act as tasks
+- need multiple threads
+- have to set sout to monitor the state of each thread
