@@ -1,22 +1,24 @@
 package com.learn.threads.topic9.q9;
 
 public class TaskSimulator {
-    private int counter = 0;
-
-    public void print() {
-        while (counter < 100) {
-            counter++;
-        }
-        System.out.println(Thread.currentThread().getName() + " thread finish counting to " + counter);
-    }
 
     public static void main(String[] args) throws InterruptedException {
-        TaskSimulator taskSimulator = new TaskSimulator();
 
-        Thread backgroundTaskOne = new Thread(taskSimulator::print, "backgroundTaskOne");
-        Thread backgroundTaskTwo = new Thread(taskSimulator::print, "backgroundTaskTwo");
-        Thread backgroundTaskThree = new Thread(taskSimulator::print, "backgroundTaskThree");
-        Thread criticalTask = new Thread(taskSimulator::print, "criticalTask");
+        Runnable task = new Runnable() {
+            private int counter = 0;
+            @Override
+            public void run() {
+                while (counter < 1000000) {
+                    counter++;
+                }
+                System.out.println(Thread.currentThread().getName() + " thread finish counting to " + counter);
+            }
+        };
+
+        Thread backgroundTaskOne = new Thread(task, "backgroundTaskOne");
+        Thread backgroundTaskTwo = new Thread(task, "backgroundTaskTwo");
+        Thread backgroundTaskThree = new Thread(task, "backgroundTaskThree");
+        Thread criticalTask = new Thread(task, "criticalTask");
 
         backgroundTaskOne.setPriority(Thread.MIN_PRIORITY);
         backgroundTaskTwo.setPriority(Thread.NORM_PRIORITY);
