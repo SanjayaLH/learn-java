@@ -24,6 +24,7 @@ public class MultiTierServiceSimulatorRevised {
             this.nextTier = nextTier;
             this.maxThreads = maxThreads;
             this.threadGroup = new ThreadGroup(tierName);
+            createWorker();//Call the worker creating method inside the constructor
         }
 
         /**
@@ -78,15 +79,6 @@ public class MultiTierServiceSimulatorRevised {
         }
 
         /**
-         * Launch only the initial worker set; no scheduler thread anymore
-         */
-        public void startWork(int initialThreads) {
-            for (int i = 0; i < initialThreads; i++) {
-                createWorker();
-            }
-        }
-
-        /**
          * Cleanly tear down: stop accepting, interrupt blocked workers
          */
         public void shutdown() {
@@ -106,10 +98,6 @@ public class MultiTierServiceSimulatorRevised {
         ServiceTier busTier  = new ServiceTier("BUSINESS_TIER", dataTier, 10);
         ServiceTier pptTier  = new ServiceTier("PRESENTATION_TIER", busTier, 10);
 
-        // 2) Kick off each tier with 1 initial worker
-        pptTier.startWork(1);
-        busTier.startWork(1);
-        dataTier.startWork(1);
 
         // 3) Simulator scheduler for random arrivals
         ScheduledExecutorService simulator = Executors.newSingleThreadScheduledExecutor(r ->

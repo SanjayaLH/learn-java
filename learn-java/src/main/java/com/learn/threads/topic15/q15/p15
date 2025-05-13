@@ -24,6 +24,10 @@ web application with 3 tire architecture
     8. Gracefully shutdown
         - shutdown()
 
+    Special Notes:
+    - Can remove startWork() by adding createWorker() method inside the constructor,
+    then it will create a thread each time it call
+
 
 
 
