@@ -1,0 +1,18 @@
+14. Thread Groups
+------------------
+Problem:
+Implement a server handling multiple client connections where each client connection
+is managed by a separate thread. Group threads by functionality and implement features to count active
+threads and to stop all threads simultaneously on shutdown.
+
+- have to have 2 thread groups
+    1. client connection threads --- no need to create TG ----> create thread T
+    2. handler threads
+
+    - need to count active threads -
+        - how? ------------> can get ThreadGroup class
+        - countActiveThreads()
+
+    - simultaneously stop all threads
+        - how?
+        - shutdown()
