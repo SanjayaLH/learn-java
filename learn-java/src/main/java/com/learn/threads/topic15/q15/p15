@@ -1,0 +1,35 @@
+15. Working with ThreadGroups
+-----------------------------
+Problem:
+Develop an application that simulates a multi-tier service architecture with different service levels,
+each represented by a ThreadGroup.
+Implement features to dynamically adjust the number of threads per service level based on workload.
+
+web application with 3 tire architecture
+- Presentation layer
+- Business logic layer
+- Data access layer
+
+    - each layer has thread group
+    1. Create separate ThreadGroups for each tier.(can use Enum to crate a thread group.
+     Is it give any value?)
+    2. Start with a fixed number of threads per group.
+    3. Simulate tasks being submitted (like user http requests in ppt layer).
+    4. Have to change workload per group
+        - adjustThreads() created to do it
+    5. Have to measure workload per group
+    6. Add more threads if workload is high.
+     Reduce threads (or let them finish) when workload drops.
+    7. Include a shared task queue per group.
+    8. Gracefully shutdown
+        - shutdown()
+
+    Special Notes:
+    - Can remove startWork() by adding createWorker() method inside the constructor,
+    then it will create a thread each time it call
+
+
+
+
+
+
