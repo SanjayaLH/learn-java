@@ -1,0 +1,13 @@
+16. Uncaught Exceptions
+------------------------
+Problem:
+Create a system that processes incoming data feeds where each feed is handled by a separate thread.
+Implement an uncaught exception handler to log errors and restart the thread if it fails unexpectedly.
+
+Incoming data feed processor
+1. Have to simulate a data feed---> can add it to main method because only need to simulate
+2. Store the data feed--> BlockingQueue
+3. Process data feed by separate thread(multiple threads)
+4. Have to have uncaught exception handler
+5. have to simulate thread failer and log error
+6. restart the failed thread ----> have to double check this function
