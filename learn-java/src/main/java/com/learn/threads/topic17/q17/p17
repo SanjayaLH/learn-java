@@ -1,0 +1,20 @@
+17. Thread Performance
+-----------------------
+Problem:
+Implement an application that performs image processing tasks in parallel using threads.
+Measure and optimize the thread execution time to enhance performance.
+
+- function -> processImage()
+- need to divide an image to subimages
+    - calTaskAmount(int numOfRows, int numOfCols) --> calculate # image chunks
+- subimages should added to a queue
+    -createTask(String imageName, int imageChunks) create sub images and added to the queue
+- should be able to increase and decrease threads and check the performance of application
+- Struggling to measuring the time
+    - threads added to a array and added when creating the threads
+    - start time b4 start threads
+
+- Changes related to code review:
+    - Change the functionality of uploadImage() and signature.
+    - added processImage() and remove unwanted methods
+    - added 2d array as DS
