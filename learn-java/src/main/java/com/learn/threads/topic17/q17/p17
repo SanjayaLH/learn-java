@@ -13,3 +13,8 @@ Measure and optimize the thread execution time to enhance performance.
 - Struggling to measuring the time
     - threads added to a array and added when creating the threads
     - start time b4 start threads
+
+- Changes related to code review:
+    - Change the functionality of uploadImage() and signature.
+    - added processImage() and remove unwanted methods
+    - added 2d array as DS
