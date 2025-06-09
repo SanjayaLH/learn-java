@@ -38,7 +38,7 @@ public class ImageProcessorSimulator {
             final int endRow = Math.min(startRow + rowsPerThread, rowCount);
 
             threads[i] = new Thread(() -> {
-                //startTimes[threadIndex] = System.currentTimeMillis();
+
                 startTimes[threadIndex] = System.nanoTime();
 
                 for (int row = startRow; row < endRow; row++) {
@@ -47,8 +47,6 @@ public class ImageProcessorSimulator {
                         output[row][col] = input[row][col] + "-0xFFFF0000";
                     }
                 }
-
-                //endTimes[threadIndex] = System.currentTimeMillis();
                 endTimes[threadIndex] = System.nanoTime();
                 System.out.println("Thread " + threadIndex + " processed rows " + startRow + " to " + (endRow - 1)
                         + " in " + (endTimes[threadIndex] - startTimes[threadIndex]) + " ns");
